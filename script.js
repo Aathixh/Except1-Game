@@ -28,7 +28,9 @@ const initialization = function () {
   player0Element.classList.add('player--active');
   player1Element.classList.remove('player--active');
 };
+
 initialization();
+
 const switchPlayer = function () {
   document.getElementById(`current--${activePlayer}`).textContent = 0;
   currentScore = 0;
@@ -37,7 +39,7 @@ const switchPlayer = function () {
   player1Element.classList.toggle('player--active');
 };
 
-//rolling dice
+//Rolling dice
 btnDice.addEventListener('click', function () {
   if (playing) {
     // 1. Generating a random dice roll
@@ -59,6 +61,7 @@ btnDice.addEventListener('click', function () {
   }
 });
 
+//Holding current score
 btnHold.addEventListener('click', function () {
   if (playing) {
     //1. Add current score to activePlayer's Score
@@ -83,4 +86,5 @@ btnHold.addEventListener('click', function () {
   }
 });
 
+//new game
 btnNew.addEventListener('click', initialization);
