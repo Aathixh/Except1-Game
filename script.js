@@ -11,6 +11,21 @@ const btnNew = document.querySelector('.btn--new');
 const btnDice = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
 
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
+const btnCloseModal = document.querySelector('.close-modal');
+const closeModel = function () {
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
+};
+btnCloseModal.addEventListener('click', closeModel);
+overlay.addEventListener('click', closeModel);
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') {
+    closeModel();
+  }
+});
+
 //Starting conditions of the game
 let totalScore, currentScore, activePlayer, playing;
 const initialization = function () {
@@ -69,7 +84,7 @@ btnHold.addEventListener('click', function () {
     document.querySelector(`#score--${activePlayer}`).textContent =
       totalScore[activePlayer];
     //2. Check if player's score is >= 100
-    if (totalScore[activePlayer] >= 100) {
+    if (totalScore[activePlayer] >= 10) {
       //Finish the game
       playing = false;
       document
