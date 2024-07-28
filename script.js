@@ -42,6 +42,8 @@ const initialization = function () {
   player1Element.classList.remove('player--winner');
   player0Element.classList.add('player--active');
   player1Element.classList.remove('player--active');
+  document.getElementById('name--0').textContent = 'Player 1';
+  document.getElementById('name--1').textContent = 'Player 2';
 };
 
 initialization();
